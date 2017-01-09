@@ -93,12 +93,17 @@ public class MainActivity extends AppCompatActivity
                     .replace(R.id.window_main, new MonitorFragment())
                     .commit();
         } else if (id == R.id.nav_music) {
-
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.window_main, new MusicFragment())
+                    .commit();
         } else if (id == R.id.nav_info) {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.window_main, new SettingFragment())
                     .commit();
         } else if (id == R.id.nav_settup) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.window_main, new PairFragment())
+                    .commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

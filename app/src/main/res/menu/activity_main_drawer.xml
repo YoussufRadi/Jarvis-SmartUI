@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:checkableBehavior="single">
 
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_calender"
             android:icon="@android:drawable/ic_menu_my_calendar"
+            android:checked="true"
             android:title="Calender" />
         <item
             android:id="@+id/nav_music"
@@ -19,10 +21,12 @@
     <item android:title="Settings">
         <menu>
             <item
+                android:checkable="true"
                 android:id="@+id/nav_info"
                 android:icon="@android:drawable/ic_dialog_info"
                 android:title="User Info" />
             <item
+                android:checkable="true"
                 android:id="@+id/nav_settup"
                 android:icon="@android:drawable/stat_sys_data_bluetooth"
                 android:title="Pair with Home" />
