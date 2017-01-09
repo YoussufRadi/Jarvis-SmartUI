@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "498668412771",
+    "firebase_url": "https://jarvis-smartui.firebaseio.com",
+    "project_id": "jarvis-smartui",
+    "storage_bucket": "jarvis-smartui.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498668412771:android:a12a42cf5869045f",
+        "android_client_info": {
+          "package_name": "com.winterproject.youssufradi.jarvis_smartui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "498668412771-ofjhdki7tlinush6k9uiffbne9qjr0go.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAP-MwTpbkZZXIWMQExZsDrXzo4VYrR2Nk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
