@@ -2,9 +2,14 @@ package com.winterproject.youssufradi.jarvis_smartui;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,8 +70,40 @@ public class PairFragment extends Fragment {
                 pairedDevicesList();
             }
         });
+
+        myBluetooth.startDiscovery();
+        ArrayList list = new ArrayList();
+        final ArrayAdapter adapter = new ArrayAdapter(getActivity(),android.R.layout.simple_list_item_1, list);
+        devicelist.setAdapter(adapter);
+
+
+//        IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
+//        getActivity().registerReceiver(mReceiver, filter);
+
         return rootView;
     }
+
+//    private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
+//        public void onReceive(Context context, Intent intent) {
+//            String action = intent.getAction();
+//            if (BluetoothDevice.ACTION_FOUND.equals(action)) {
+//                // Discovery has found a device. Get the BluetoothDevice
+//                // object and its info from the Intent.
+//                BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+//                String deviceName = device.getName();
+//                String deviceHardwareAddress = device.getAddress(); // MAC address
+//                Log.i("Device",device.getName() + "\n" + device.getAddress());
+//            }
+//        }
+//    };
+//
+//    public void onDestroy() {
+//        super.onDestroy();
+//
+//
+//        // Don't forget to unregister the ACTION_FOUND receiver.
+//        getActivity().unregisterReceiver(mReceiver);
+//    }
 
 
     private void pairedDevicesList()
@@ -101,7 +138,10 @@ public class PairFragment extends Fragment {
 
             // Make an intent to start next activity.
             //Intent i = new Intent(DeviceList.this, ledControl.class);
-
+            ((MainActivity)getActivity()).setAddress(address);
+            getActivity().getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.window_main, new MonitorFragment())
+                    .commit();
             //Change the activity.
             //i.putExtra(EXTRA_ADDRESS, address); //this will be received at ledControl (class) Activity
             //startActivity(i);
