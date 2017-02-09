@@ -27,7 +27,7 @@
                 android:title="User Info" />
             <item
                 android:checkable="true"
-                android:id="@+id/nav_settup"
+                android:id="@+id/nav_setup"
                 android:icon="@android:drawable/stat_sys_data_bluetooth"
                 android:title="Pair with Home" />
         </menu>

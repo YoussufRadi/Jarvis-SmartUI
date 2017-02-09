@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.window_main, new SettingFragment())
                     .commit();
-        } else if (id == R.id.nav_settup) {
+        } else if (id == R.id.nav_setup) {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.window_main, new PairFragment())
                     .commit();
